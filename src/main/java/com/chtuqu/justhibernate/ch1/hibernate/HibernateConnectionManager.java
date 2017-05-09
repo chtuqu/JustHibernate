@@ -17,7 +17,11 @@ public class HibernateConnectionManager {
 
     private static SessionFactory createSessionFactory() {
         ServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build();
-        sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
+        try {
+            sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
+        } catch (Exception e) {
+            StandardServiceRegistryBuilder.destroy(registry);
+        }
         return sessionFactory;
     }
 

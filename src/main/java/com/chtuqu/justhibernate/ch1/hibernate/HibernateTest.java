@@ -6,18 +6,16 @@ public class HibernateTest {
     public static void main(String[] args) {
         HibernatePersistor persistor = new HibernatePersistor();
 
-        int id = 1001;
-        Movie movie = createMovie(id);
+        Movie movie = createMovie();
 
         persistor.persist(movie);
-
-        movie = persistor.query(id);
+        movie = persistor.query(movie.getId());
 //        System.out.println(movie);
+        HibernateConnectionManager.getSessionFactory().close();
     }
 
-    private static Movie createMovie(int id) {
+    private static Movie createMovie() {
         Movie movie = new Movie();
-        movie.setId(id);
         movie.setTitle("Fight Club");
         movie.setDirector("David Fincher");
         movie.setSynopsis("First rule of Fight Club: You do not talk about Fight Club");
