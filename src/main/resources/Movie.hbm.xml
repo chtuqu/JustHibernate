@@ -4,11 +4,11 @@
 
 <hibernate-mapping>
     <class name="com.chtuqu.justhibernate.ch1.dto.Movie" table="movies">
-        <id name="id" column="ID">
+        <id name="id">
             <generator class="native"/>
         </id>
-        <property name="title" column="TITLE"/>
-        <property name="director" column="DIRECTOR"/>
-        <property name="synopsis" column="SYNOPSIS"/>
+        <property name="title"/>
+        <property name="director"/>
+        <property name="synopsis"/>
     </class>
 </hibernate-mapping>
