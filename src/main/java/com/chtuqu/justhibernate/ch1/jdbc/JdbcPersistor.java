@@ -8,8 +8,8 @@ import java.sql.SQLException;
 
 public class JdbcPersistor {
 
-    private String insertSql = "INSERT INTO MOVIES (title, director, synopsis) VALUES (?,?,?);";
-    private String selectSql = "SELECT * FROM MOVIES WHERE title = ?";
+    private String insertSql = "INSERT INTO movies (title, director, synopsis) VALUES (?,?,?);";
+    private String selectSql = "SELECT * FROM movies WHERE title = ?";
 
     void persist(Movie movie) {
         try {

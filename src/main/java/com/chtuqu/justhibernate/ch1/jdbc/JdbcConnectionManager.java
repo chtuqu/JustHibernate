@@ -8,7 +8,7 @@ public class JdbcConnectionManager {
     private static String url = "jdbc:mysql://localhost:3306/jh";
     private static String driverClass = "com.mysql.jdbc.Driver";
     private static String username = "idea";
-    private static String password = "newpass";
+    private static String password = "ideapass";
 
     static {
         establishConnection();

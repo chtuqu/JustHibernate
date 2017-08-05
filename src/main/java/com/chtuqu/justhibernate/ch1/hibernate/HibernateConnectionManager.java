@@ -15,14 +15,19 @@ public class HibernateConnectionManager {
 
     private HibernateConnectionManager() { }
 
-    private static SessionFactory createSessionFactory() {
-        ServiceRegistry registry = new StandardServiceRegistryBuilder().configure().build();
+    private static void createSessionFactory() {
+        // a SessionFactory is set up once for an application!
+        ServiceRegistry registry = new StandardServiceRegistryBuilder().
+                configure(). // configures settings from hibernate.cfg.xml
+                build();
         try {
             sessionFactory = new MetadataSources(registry).buildMetadata().buildSessionFactory();
         } catch (Exception e) {
+            e.printStackTrace();
+            // the registry is normally destroyed by the SessionFactory, but due to failure while instantiating
+            // we have to destroy it manually
             StandardServiceRegistryBuilder.destroy(registry);
         }
-        return sessionFactory;
     }
 
     public static SessionFactory getSessionFactory() {

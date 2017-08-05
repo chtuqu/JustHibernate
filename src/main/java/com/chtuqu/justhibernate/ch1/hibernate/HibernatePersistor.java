@@ -10,14 +10,15 @@ public class HibernatePersistor {
         session.beginTransaction();
         session.save(movie);
         session.getTransaction().commit();
+        session.close();
     }
 
     public Movie query(int id) {
         Session session = HibernateConnectionManager.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        Movie movie = session.load(Movie.class, id);
-        System.out.println(movie);
+        Movie movie = session.get(Movie.class, id);
         session.getTransaction().commit();
+        session.close();
         return movie;
     }
 }

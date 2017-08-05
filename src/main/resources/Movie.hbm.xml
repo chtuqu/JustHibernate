@@ -3,7 +3,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    <class name="com.chtuqu.justhibernate.ch1.dto.Movie" table="MOVIES">
+    <class name="com.chtuqu.justhibernate.ch1.dto.Movie" table="movies">
         <id name="id" column="ID">
             <generator class="native"/>
         </id>
