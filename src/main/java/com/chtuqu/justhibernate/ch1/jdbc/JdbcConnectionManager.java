@@ -6,8 +6,8 @@ public class JdbcConnectionManager {
     private static Connection connection;
 
     private static String url = "jdbc:mysql://localhost:3306/jh?useSSL=false";
-    private static String username = "idea";
-    private static String password = "ideapass";
+    private static String username = "chtuqu";
+    private static String password = "telephone";
 
     static {
         establishConnection();
