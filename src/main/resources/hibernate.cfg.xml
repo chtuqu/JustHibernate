@@ -5,10 +5,10 @@
 
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jh</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jh?useSSL=false</property>
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.username">idea</property>
-        <property name="hibernate.connection.password">ideapass</property>
+        <property name="hibernate.connection.username">chtuqu</property>
+        <property name="hibernate.connection.password">telephone</property>
         <property name="hibernate.connection.dialect">org.hibernate.dialect.MySQLDialect</property>
 
         <property name="hibernate.current_session_context_class">thread</property>
