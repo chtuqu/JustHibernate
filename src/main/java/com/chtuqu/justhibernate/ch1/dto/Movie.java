@@ -6,16 +6,6 @@ public class Movie {
     private String director;
     private String synopsis;
 
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", director='" + director + '\'' +
-                ", synopsis='" + synopsis + '\'' +
-                '}';
-    }
-
     public int getId() {
         return id;
     }
@@ -46,5 +36,15 @@ public class Movie {
 
     public void setSynopsis(String synopsis) {
         this.synopsis = synopsis;
+    }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", director='" + director + '\'' +
+                ", synopsis='" + synopsis + '\'' +
+                '}';
     }
 }

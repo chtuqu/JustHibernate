@@ -1,24 +1,23 @@
 package com.chtuqu.justhibernate.ch1.hibernate;
 
-import com.chtuqu.justhibernate.ch1.dto.Movie;
 import org.hibernate.Session;
 
 public class HibernatePersistor {
 
-    public void persist(Movie movie) {
+    public <T> void persist(T obj) {
         Session session = HibernateConnectionManager.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        session.save(movie);
+        session.save(obj);
         session.getTransaction().commit();
         session.close();
     }
 
-    public Movie query(int id) {
+    public <T> T query(Class<T> clazz, int id) {
         Session session = HibernateConnectionManager.getSessionFactory().getCurrentSession();
         session.beginTransaction();
-        Movie movie = session.get(Movie.class, id);
+        T obj = session.get(clazz, id);
         session.getTransaction().commit();
         session.close();
-        return movie;
+        return obj;
     }
 }

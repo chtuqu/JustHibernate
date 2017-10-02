@@ -9,7 +9,7 @@ public class HibernateTest {
         Movie movie = createMovie("Fight Club", "David Fincher", "First rule of Fight Club: You do not talk about Fight Club");
 
         persistor.persist(movie);
-        movie = persistor.query(movie.getId());
+        movie = persistor.query(Movie.class, movie.getId());
         System.out.println(movie);
         HibernateConnectionManager.getSessionFactory().close();
     }
